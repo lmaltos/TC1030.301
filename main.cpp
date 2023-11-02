@@ -1,6 +1,8 @@
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <ctime>
+#include "myClase.h"
 
 using namespace std;
 
@@ -103,12 +105,30 @@ void ciclos() {
     } while (condicion);
 }
 
+void manejoArchivos();
+
 int Max(int,int,int);
 
 int main() {
     //srand(time(0)); // semilla aleatoria
     //arreglos();
-    Max(123,23,345);
+    //Max(123,23,345);
+    //manejoArchivos();
+    myClase obj,obj2(100);
+    myClase A[10][10];
+    cout << "obj: ";
+    obj.myMethod();
+    cout << "obj2: ";
+    obj2.myMethod();
+
+    obj.setA(5);
+    obj.setB(6);
+    obj.setX(3.14);
+    obj.swap();
+    obj.myMethod();
+
+    obj2.setB(5);
+    obj2.myMethod();
 }
 
 int Max(int a, int b, int c) {
@@ -126,4 +146,24 @@ int Max(int a, int b, int c) {
         }
         return b;
     }
+}
+
+void manejoArchivos() {
+    ofstream archivoSalida;
+    ifstream archivoEntrada;
+    fstream archivo;
+    archivoSalida.open("archivoSalida.txt"); // abrir y sobreescribir
+    //archivoSalida.open("archivoSalida.txt",ios_base::app); // abrir y agregar
+    archivoSalida << "Raiz" << endl;
+    archivoSalida << "sqrt(d) = " << "sqrt(d)" << endl;
+    archivoSalida << "pow(d,0.5) = " << "pow(d,0.5)" << endl;
+    archivoSalida.close();
+
+    archivoEntrada.open("entrada.txt");
+    int n;
+    while (!archivoEntrada.eof()) {
+        archivoEntrada >> n;
+        cout << n << endl;
+    }
+    archivoEntrada.close();
 }
