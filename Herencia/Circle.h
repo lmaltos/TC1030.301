@@ -8,6 +8,7 @@ class Circle : public Shape {
   public:
     Circle();
     Circle(int,int,int);
+    string draw();
 };
 
 #endif
