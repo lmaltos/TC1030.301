@@ -47,6 +47,9 @@ int main() {
     lista.push_back(&rect1);
     lista.push_back(&rect2);
     lista.push_back(&c);
+    for (int i = 0; i < 10; i++) {
+        lista.push_back(new Circle(i+2,3,i*3+1)); // si fueramos responsables, limpiariamos esta memoria dinamica
+    }
     for (list<Shape*>::iterator it = lista.begin();
         it != lista.end();
         it++) {
