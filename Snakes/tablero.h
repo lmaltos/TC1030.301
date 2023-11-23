@@ -11,6 +11,7 @@ class tablero {
     int maximoTurnos = 16;
   public:
     tablero();
+    int getCasillas();
     int movimiento(int);
     dado* getDado();
     void setDado(dado&);

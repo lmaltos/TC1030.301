@@ -32,12 +32,16 @@ void tablero::setDado(dado &myDado) {
     D = &myDado;
 }
 
+int tablero::getCasillas() {
+    return casillas;
+}
+
 char tablero::getCasilla(int pos) {
-    return casilla[pos];
+    return casilla[pos-1];
 }
 
 char tablero::operator[](int pos) {
-    return casilla[pos];
+    return casilla[pos-1];
 }
 
 int tablero::getTurnoActual() {

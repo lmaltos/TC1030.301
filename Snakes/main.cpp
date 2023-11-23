@@ -7,8 +7,9 @@ using namespace std;
 
 int main() {
     tablero miTablero;
-    jugador j1(1),j2(2);
+    jugador j1(1),j2(2),*ganador = nullptr;
     dado miDado(6);
+    string turno;
 
     miTablero.setDado(miDado); // Se asigna el dado al tablero
     // dar instrucciones
@@ -17,9 +18,22 @@ int main() {
     do {
         cin >> opcion;
         if (opcion == 'C') {
-            j1.jugar(miTablero);
+            turno = j1.jugar(miTablero);
+            cout << turno << endl;
+            // el jugador 1 ha ganado? detener el juego
+            if (j1.haGanado()) {
+                ganador = &j1;
+                break;
+            }
             miTablero.cambiarTurno();
-            j2.jugar(miTablero);
+
+            turno = j2.jugar(miTablero);
+            cout << turno << endl;
+            // el jugador 2 ha ganado? detener el juego
+            if (j2.haGanado()) {
+                ganador = &j2;
+                break;
+            }
             miTablero.cambiarTurno();
         }
         else if (opcion == 'E') {
@@ -30,6 +44,11 @@ int main() {
             cout << "Invalid option, please press C to continue next turn or E to end the game" << endl;
         }
     } while (miTablero.turnosDisponibles());
-    
+    if (ganador != nullptr) {
+        cout << "Player " << ganador->getID() << " is the winner!!!" << endl;
+    }
+    if (!miTablero.turnosDisponibles()) {
+        cout << "The maximum number of turns has been reached..." << endl;
+    }
     return 0;
 }
