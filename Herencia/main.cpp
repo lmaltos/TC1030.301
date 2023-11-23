@@ -5,15 +5,12 @@
 #include <list>
 
 int main_old() {
-    Shape fig(2,4);
+    //Shape fig(2,4);
     Circle a(1,2,5);
     Rectangle rect1(2,5);
     Rectangle rect2(5,6,7,8);
     Cilindro c;
-    cout << fig.draw() 
-        << " con valor x en " << fig.getValueX()
-        << " y con valor y en " << fig.getValueY()
-        << endl;
+
     cout << a.draw()
         << " con valor x en " << a.getValueX()
         << " y con valor y en " << a.getValueY()
@@ -36,13 +33,13 @@ int main_old() {
 }
 
 int main() {
-    Shape fig(2,4);
+    //Shape fig(2,4);
     Circle a(1,2,5);
     Rectangle rect1(2,5);
     Rectangle rect2(5,6,7,8);
     Cilindro c;
     list<Shape*> lista;
-    lista.push_back(&fig);
+    //lista.push_back(&fig);
     lista.push_back(&a);
     lista.push_back(&rect1);
     lista.push_back(&rect2);

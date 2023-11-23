@@ -10,7 +10,8 @@ class Shape {
   public:
     Shape();
     Shape(int,int);
-    virtual string draw();
+    virtual string draw() = 0;
+    //virtual int area() = 0;
     int getValueX();
     int getValueY();
 };

@@ -10,6 +10,7 @@ class Rectangle : public Shape {
     Rectangle();
     Rectangle(int,int);
     Rectangle(int,int,int,int);
+    string draw();
 };
 
 #endif

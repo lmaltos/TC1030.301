@@ -9,10 +9,6 @@ Shape::Shape(int _x,int _y) {
     y = _y;
 }
 
-string Shape::draw() {
-    return "Soy una figura";
-}
-
 int Shape::getValueX() {
     return x;
 }

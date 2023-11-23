@@ -9,5 +9,5 @@ Circle::Circle(int _x, int _y, int _r) : Shape(_x,_y) {
 }
 
 string Circle::draw() {
-    return "Soy un circulo de radio " + to_string(r) + " y " + Shape::draw();
+    return "Soy un circulo de radio " + to_string(r) + " y ";// + Shape::draw();
 }

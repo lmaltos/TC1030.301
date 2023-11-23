@@ -14,3 +14,7 @@ Rectangle::Rectangle(int _x, int _y, int _a, int _b)
     a = _a;
     b = _b;
 }
+
+string Rectangle::draw() {
+    return "Soy un rectangulo";
+}
